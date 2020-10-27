@@ -7,7 +7,7 @@
     parameters: 
       - name: data_path
         type: string
-        default: valohai/inputs
+        default: valohai/inputs/data
       - name: save_path
         type: string
         default: valohai/outputs   
@@ -27,9 +27,8 @@
         type: integer
         default: 1000
     inputs:
-      - name: bow_tr_counts.mat
-        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_counts.mat
-      - name: bow_tr_tokens.mat
-        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_tokens.mat
-      - name: vocab.pkl
-        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl
+      - name: data
+        default: 
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_counts.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_tokens.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl

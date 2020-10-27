@@ -72,7 +72,6 @@ if torch.cuda.is_available():
 
 ## get data
 # 1. vocabulary
-print(os.path.join(args.data_path))
 vocab, train, valid, test = data.get_data(os.path.join(args.data_path))
 vocab_size = len(vocab)
 args.vocab_size = vocab_size
