@@ -28,8 +28,8 @@
         default: 1000
     inputs:
       - name: bow_tr_counts.mat
-        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/bow_tr_counts.mat
+        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_counts.mat
       - name: bow_tr_tokens.mat
-        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/bow_tr_tokens.mat
+        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_tokens.mat
       - name: vocab.pkl
-        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/vocab.pkl
+        default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl
