@@ -7,10 +7,10 @@
     parameters: 
       - name: data_path
         type: string
-        default: valohai/inputs/data
+        default: /valohai/inputs/data
       - name: save_path
         type: string
-        default: valohai/outputs   
+        default: /valohai/outputs   
       - name: mode
         type: string
         default: train
@@ -31,4 +31,12 @@
         default: 
           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_counts.mat
           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_tokens.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_counts.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h1_counts.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h1_tokens.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h2_counts.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h2_tokens.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_tokens.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_counts.mat
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_tokens.mat
           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl
