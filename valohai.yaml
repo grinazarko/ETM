@@ -1,7 +1,9 @@
 - step: 
     name: train-model
     image: pytorch/pytorch
-    command: python main.py {parameters}
+    command: 
+      - pip install numpy matplotlib scipy
+      - python main.py {parameters}
     parameters: 
       - name: data_path
         type: string
