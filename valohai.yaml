@@ -1,0 +1,35 @@
+- step:
+  name: train-model
+  image: python:3.8
+  command: 
+    - python main.py {parameters}
+  parameters: 
+    - name: data_path
+      type: string
+      default: /valohai/inputs
+    - name: save_path
+      type: string
+      description:
+      default: /valohai/outputs   
+    - name: mode
+      type: string
+      default: train
+    - name: train_embeddings
+      type: integer
+      default: 1
+    - name: dataset
+      type: string
+      default: storm
+    - name: num_topics
+      type: integer
+      default: 50
+    - name: epochs
+      type: integer
+      default: 1000
+  inputs:
+    - name: bow_tr_counts.mat
+      default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/bow_tr_counts.mat
+    - name: bow_tr_tokens.mat
+      default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/bow_tr_tokens.mat
+    - name: vocab.pkl
+      default: swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/vocab.pkl

@@ -104,7 +104,7 @@ if not args.train_embeddings:
     vectors = {}
     with open(emb_path, 'rb') as f:
         for l in f:
-            line = l.decode().split()
+            line = l.decode().split(" ")
             word = line[0]
             if word in vocab:
                 vect = np.array(line[1:]).astype(np.float)
@@ -206,8 +206,7 @@ def visualize(m, show_emb=True):
 
     m.eval()
 
-    queries = ['andrew', 'computer', 'sports', 'religion', 'man', 'love', 
-                'intelligence', 'money', 'politics', 'health', 'people', 'family']
+    queries = ['money', 'people', 'family']
 
     ## visualize topics using monte carlo
     with torch.no_grad():
