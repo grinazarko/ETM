@@ -1,4 +1,4 @@
-- step:
+- step: 
   name: train-model
   image: python:3.8
   command: 
@@ -9,7 +9,6 @@
       default: /valohai/inputs
     - name: save_path
       type: string
-      description:
       default: /valohai/outputs   
     - name: mode
       type: string
