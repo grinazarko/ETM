@@ -1,8 +1,7 @@
 - step: 
   name: train-model
-  image: python:3.8
-  command: 
-    - python main.py {parameters}
+  image: pytorch/pytorch
+  command: python main.py {parameters}
   parameters: 
     - name: data_path
       type: string
