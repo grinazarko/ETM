@@ -19,9 +19,9 @@ def get_coherence_values(topics_numbers_parameter):
     id_map = dict([(i, s) for i, s in enumerate(vectorizer.get_feature_names())])
     lda = LdaMulticore(corpus=corpus_vect_gensim_train, id2word=id_map, num_topics=topics_numbers_parameter)
     models.append(lda)
-
+    print(topics_numbers_parameter)
     corpus_vect_gensim_test = gensim.matutils.Sparse2Corpus(test_set_vectorized, documents_columns=False)    
-    cm = CoherenceModel(model=lda, corpus=corpus_vect_gensim_test, coherence='u_mass', topn=20)
+    cm = CoherenceModel(model=lda, corpus=corpus_vect_gensim_test, coherence='u_mass', processes=-1)
     coherence = cm.get_coherence()
     topic_coherences.append(coherence)
     print(coherence, topics_numbers_parameter)

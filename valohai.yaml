@@ -92,8 +92,8 @@
     name: lda_coherence_search
     image: pytorch/pytorch
     command: 
-      - pip install gensim
-      - python /scripts/lda_coherence_search.py
+      - pip install gensim sklearn
+      - python ./scripts/lda_coherence_search.py
     inputs:
       - name: data
         default: 
