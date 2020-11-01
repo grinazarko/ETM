@@ -41,49 +41,60 @@
 #           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_tokens.mat
 #           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl
 
+# - step: 
+#     name: evaluate-model
+#     image: pytorch/pytorch
+#     command: 
+#       - pip install numpy matplotlib scipy
+#       - python main.py {parameters}
+#     parameters: 
+#       - name: data_path
+#         type: string
+#         default: /valohai/inputs/data
+#       - name: load_from
+#         type: string
+#         default: /valohai/inputs/data/etm_storm_K_50_Htheta_800_Optim_adam_Clip_0.0_ThetaAct_relu_Lr_0.005_Bsz_1000_RhoSize_300_trainEmbeddings_1
+#       - name: mode
+#         type: string
+#         default: eval
+#       - name: train_embeddings
+#         type: integer
+#         default: 1
+#       - name: dataset
+#         type: string
+#         default: storm
+#       - name: num_topics
+#         type: integer
+#         default: 50
+#       - name: tc
+#         type: integer
+#         default: 1
+#       - name: td
+#         type: integer
+#         default: 1
+#     inputs:
+#       - name: data
+#         default: 
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/01ENM/01ENMZNCNK24SEHM7S7V8BVCC2/output-14/etm_storm_K_50_Htheta_800_Optim_adam_Clip_0.0_ThetaAct_relu_Lr_0.005_Bsz_1000_RhoSize_300_trainEmbeddings_1
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_counts.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_tokens.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_counts.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h1_counts.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h1_tokens.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h2_counts.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h2_tokens.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_tokens.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_counts.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_tokens.mat
+#           - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl
+
 - step: 
-    name: evaluate-model
+    name: lda_coherence_search
     image: pytorch/pytorch
     command: 
-      - pip install numpy matplotlib scipy
-      - python main.py {parameters}
-    parameters: 
-      - name: data_path
-        type: string
-        default: /valohai/inputs/data
-      - name: load_from
-        type: string
-        default: /valohai/inputs/data/etm_storm_K_50_Htheta_800_Optim_adam_Clip_0.0_ThetaAct_relu_Lr_0.005_Bsz_1000_RhoSize_300_trainEmbeddings_1
-      - name: mode
-        type: string
-        default: eval
-      - name: train_embeddings
-        type: integer
-        default: 1
-      - name: dataset
-        type: string
-        default: storm
-      - name: num_topics
-        type: integer
-        default: 50
-      - name: tc
-        type: integer
-        default: 1
-      - name: td
-        type: integer
-        default: 1
+      - pip install gensim
+      - python /scripts/lda_coherence_search.py
     inputs:
       - name: data
         default: 
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/01ENM/01ENMZNCNK24SEHM7S7V8BVCC2/output-14/etm_storm_K_50_Htheta_800_Optim_adam_Clip_0.0_ThetaAct_relu_Lr_0.005_Bsz_1000_RhoSize_300_trainEmbeddings_1
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_counts.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_tr_tokens.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_counts.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h1_counts.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h1_tokens.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h2_counts.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_h2_tokens.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_ts_tokens.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_counts.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/bow_va_tokens.mat
-          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vocab.pkl
+          - swift://f8a5dbc8033343aea820c139245afe13/Thesis_Greg_Nazarko/data/vectorizer.pkl
