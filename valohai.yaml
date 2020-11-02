@@ -20,7 +20,7 @@
       - name: dataset
         type: string
         default: storm
-      - name: emb_file
+      - name: emb_path
         type: string
         default: /valohai/inputs/data/glove.twitter.27B.25d.txt
       - name: num_topics
