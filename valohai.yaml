@@ -32,7 +32,10 @@
       - name: emb_size
         type: integer
         default: 25
-        
+      - name: rho_size
+        type: integer
+        default: 25  
+
     inputs:
       - name: data
         default: 
