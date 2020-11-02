@@ -29,6 +29,10 @@
       - name: epochs
         type: integer
         default: 1000
+      - name: emb_size
+        type: integer
+        default: 25
+        
     inputs:
       - name: data
         default: 
