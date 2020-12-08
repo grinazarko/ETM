@@ -11,8 +11,8 @@ def install(package):
     else:
         pip._internal.main(['install', package])
 
-install("top2vec")
-install("top2vec[sentence_encoders]")
+install("top2vec===1.0.17")
+install("top2vec[sentence_encoders]===1.0.17")
 
 dataset = pd.read_csv('/valohai/inputs/data/lastFiveYears.csv')
 dataset = dataset[dataset['language'] == "en"]
