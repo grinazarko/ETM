@@ -20,7 +20,7 @@ print(dataset.shape)
 
 from top2vec import Top2Vec
 
-importlib.reload("top2vec")
+importlib.reload(top2vec)
 
 model = Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
 
