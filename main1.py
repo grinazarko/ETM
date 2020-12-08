@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import pickle
 import pip
+import importlib
 
 def install(package):
     if hasattr(pip, 'main'):
@@ -19,7 +20,7 @@ print(dataset.shape)
 
 from top2vec import Top2Vec
 
-reload(top2vec)
+importlib.reload(top2vec)
 
 model = Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
 
