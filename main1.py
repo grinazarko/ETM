@@ -24,4 +24,4 @@ importlib.reload(top2vec)
 
 model = top2vec.Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
 
-model.save('file')
+model.save('/valohai/outputs/file')
