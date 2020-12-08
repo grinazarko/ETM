@@ -18,11 +18,11 @@ dataset = pd.read_csv('/valohai/inputs/data/lastFiveYears.csv')
 dataset = dataset[dataset['language'] == "en"]
 print(dataset.shape)
 
-from top2vec import Top2Vec
+import top2vec 
 
 importlib.reload(top2vec)
 
-model = Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
+model = top2vec.Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
 
 with open('/valohai/outputs/file', 'wb') as f:
     pickle.dump(model, f)
