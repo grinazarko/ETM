@@ -24,5 +24,4 @@ importlib.reload(top2vec)
 
 model = top2vec.Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
 
-with open('/valohai/outputs/file', 'wb') as f:
-    pickle.dump(model, f)
+model.save('file')
