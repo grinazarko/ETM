@@ -19,6 +19,8 @@ print(dataset.shape)
 
 from top2vec import Top2Vec
 
+reload(top2vec)
+
 model = Top2Vec(list(dataset["txtBody_Clean"])[:100], embedding_model='universal-sentence-encoder')
 
 with open('/valohai/outputs/file', 'wb') as f:
